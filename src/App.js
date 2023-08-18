@@ -1,22 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
-import { HashRouter } from 'react-router-dom';
-import {Routes, Route, Navigate} from "react-router";
-import React from 'react';
 
-import FAcheck from "react-icons/fa";
-import { AiOutlineSearch } from "react-icons/ai";
-import { FaReact } from 'react-icons/fa';
+import './App.css';
+import SearchBar from './search/searchbar';
+import DetailsScreen from './details/details-screen';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { configureStore } from "@reduxjs/toolkit";
+import omdbReducer from "./search/search-reducer";
+import { Provider } from "react-redux";
+const store = configureStore({
+  reducer: {
+    omdb: omdbReducer
+  }
+})
 
 function App() {
   return (
-    <HashRouter>
-      <div className="container">
-        <h1>hello</h1>
+    <div className="container mt-4 mb-4">
+      <Provider store={store}>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/search" element={<SearchBar />} />
+            <Route path="/details/:imdbID" element={<DetailsScreen />} />
 
-        < AiOutlineSearch />
-      </div>
-    </HashRouter>
+          </Routes>
+        </BrowserRouter>
+      </Provider>
+    </div>
   );
 }
 
