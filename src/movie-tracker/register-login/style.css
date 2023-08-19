@@ -1,0 +1,116 @@
+/* Styles for the beautified register screen */
+.register-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+  }
+  
+  .register-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    margin-left: 50px;
+    color: #333333;
+  }
+  
+  .register-input-group {
+    margin-bottom: 15px;
+  }
+  
+  .register-label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #444444;
+  }
+  
+  .register-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333333;
+  }
+  
+  .register-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #007bff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .register-button:hover {
+    background-color: #0056b3;
+  }
+
+  .checkbox-label-text {
+    padding-left: 8px; /* Adjust the value as needed */
+  }
+  
+  .login-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+  }
+  
+  .login-title {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333333;
+  }
+  
+  .login-input-group {
+    margin-bottom: 15px;
+  }
+  
+  .login-label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #444444;
+  }
+  
+  .login-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333333;
+  }
+  
+  .login-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #007bff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .login-button:hover {
+    background-color: #0056b3;
+  }
+  
+  
