@@ -1,14 +1,14 @@
 .detail-container {
-    background-color: var(--main-color);
+    background-color: white;
     padding: 50px 40px;
-    color: darkblue;
+
 }
+
 
 .movie-section {
     display: flex;
     justify-content: space-evenly;
     padding: 40px 0px;
-    color: black;
     font-weight: 400;
     ;
 }
@@ -25,7 +25,6 @@
 .movie-rating {
     padding-left: 3px;
     margin-top: 20px;
-    color: black;
     display: flex;
     align-items: center;
 
@@ -34,21 +33,25 @@
     }
 
 
-    .star-icon {
-        color: yellow;
-    }
 
-    .like-icon {
-        color: #fafafa;
-    }
 
-    .runtime-icon {
-        color: rgb(191, 213, 214);
-    }
 
-    .year-icon {
-        color: peachpuff;
-    }
+}
+
+.star-icon {
+    color: #ff9e00;
+}
+
+.like-icon {
+    color: #ff9e00;
+}
+
+.runtime-icon {
+    color: rgb(191, 213, 214);
+}
+
+.year-icon {
+    color: peachpuff;
 }
 
 .movie-plot {

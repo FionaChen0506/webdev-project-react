@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { findMovieBySearchTermThunk } from "./search-thunks";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';  // Added useNavigate
 
 const SearchBar = (props) => {
-    const [searchTerm, setSearchTerm] = useState('search');
+    const [searchTerm, setSearchTerm] = useState('');
     const { movies, loading } = useSelector((state) => state.omdb);
     const dispatch = useDispatch();
+
+    const navigate = useNavigate();  // Use the useNavigate hook
 
     const handleInputChange = (e) => {
         const value = e.target.value;
@@ -14,6 +16,11 @@ const SearchBar = (props) => {
         if (props.search) {
             props.search(value);
         }
+    };
+
+    const handleSearchClick = () => {
+        dispatch(findMovieBySearchTermThunk(searchTerm));
+        navigate(`/search/${searchTerm}`);  // Navigate to the corresponding searchTerm
     };
 
     return (
@@ -28,9 +35,8 @@ const SearchBar = (props) => {
                     />
                     <button
                         className="btn btn-primary float-end"
-                        onClick={() => {
-                            dispatch(findMovieBySearchTermThunk(searchTerm));
-                        }}>Search
+                        onClick={handleSearchClick}>  {/* Updated click handler */}
+                        Search
                     </button>
                 </li>
                 {/* //{loading && <p>Loading...</p>} */}
@@ -41,7 +47,6 @@ const SearchBar = (props) => {
                             <Link to={`/details/${movie.imdbID}`}>
                                 {movie.Title}
                             </Link>
-
                         </li>
                     )
                 }
