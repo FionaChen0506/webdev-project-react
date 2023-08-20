@@ -5,29 +5,29 @@ import * as service from "./posts-service";
 // give unique name, thunk invokes
 // service function. Returned data goes in
 // redux action's payload
-export const findpostsThunk = createAsyncThunk( 
+export const findPostsThunk = createAsyncThunk( 
   
- "posts/findposts",
- async () => await service.findposts()
+ "posts/findPosts",
+ async () => await service.findPosts()
 );
 
-export const deletepostThunk = createAsyncThunk(
-    'posts/deletepost',
+export const deletePostThunk = createAsyncThunk(
+    'posts/deletePost',
     async (postId) => {
-      await service.deletepost(postId)
+      await service.deletePost(postId)
       return postId
 })
 
-export const createpostThunk = createAsyncThunk(
-  'posts/createpost',
+export const createPostThunk = createAsyncThunk(
+  'posts/createPost',
   async (post) => {
-    const newpost = await service.createpost(post)
+    const newpost = await service.createPost(post)
     return newpost
 })
 
-export const updatepostThunk =
+export const updatePostThunk =
   createAsyncThunk(
-    'posts/updatepost',
+    'posts/updatePost',
     async (post) =>
-      await service.updatepost(post)
+      await service.updatePost(post)
 )

@@ -1,0 +1,151 @@
+.detail-container {
+    background-color: white;
+    padding: 50px 40px;
+
+}
+
+
+.movie-section {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 40px 0px;
+    font-weight: 400;
+    ;
+}
+
+.section-left {
+    margin-right: 20px;
+}
+
+.movie-title {
+    font-size: 40px;
+    color: black;
+}
+
+.movie-rating {
+    padding-left: 3px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+
+    span {
+        margin-right: 20px;
+    }
+
+
+
+
+
+}
+
+.star-icon {
+    color: #ff9e00;
+}
+
+.like-icon {
+    color: #ff9e00;
+}
+
+.runtime-icon {
+    color: rgb(191, 213, 214);
+}
+
+.year-icon {
+    color: peachpuff;
+}
+
+.movie-plot {
+    margin-top: 20px;
+    line-height: 1.8rem;
+}
+
+.movie-info>div span:first-child {
+    color: darkgray;
+    padding: 5px 0px;
+    font-weight: 600;
+    width: 100px;
+    display: inline-block;
+}
+
+.movie-info>div span {
+    color: grey;
+}
+
+
+/* PostReview.css */
+.post-review-container {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.prompt {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.review-title-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.review-content-input {
+    width: 100%;
+    padding: 10px;
+    height: 150px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.post-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.post-button:hover {
+    background-color: #0056b3;
+}
+
+/* MovieReviews.css */
+
+.movie-reviews {
+    margin-top: 20px;
+  }
+  
+  .reviews-heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .review {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+  }
+  
+  .review-title {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  .review-content {
+    font-size: 14px;
+    color: #333;
+  }
+  

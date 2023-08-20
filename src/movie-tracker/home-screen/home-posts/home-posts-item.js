@@ -1,9 +1,11 @@
 import React, {useEffect} from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
+import { utcToZonedTime, format } from 'date-fns-tz';
 
 
-import {deletepostThunk} from "../../services/posts-thunks";
+
+import {deletePostThunk} from "../../services/posts-thunks";
 import "./style.css";
 
 
@@ -12,7 +14,7 @@ const PostItem = (
   ) => {
   const dispatch = useDispatch();
   const deletepostHandler = (id) => {
-      dispatch(deletepostThunk(id));
+      dispatch(deletePostThunk(id));
   }
     // Temporary data for user avatar and name
     const tempUser = {
@@ -20,11 +22,12 @@ const PostItem = (
       name: "John Doe",
     };
 
-  // Temporary data for movie
-  const tempMovie = {
-    photo: "/images/avatar-gwen.jpg",
-    title: "Temporary Movie Title",
-  };
+    // Convert UTC timestamp to Vancouver time cause MongoDB store UTC time automatically
+    const vancouverTimeZone = 'America/Vancouver';
+    const vancouverCreatedAt = utcToZonedTime(post.createdAt, vancouverTimeZone);
+  
+    // Format the Vancouver timestamp
+    const formattedTime = format(vancouverCreatedAt, "MMM dd, yyyy HH:mm:ss");
 
     return (
       //   <li className="list-group-item">
@@ -64,29 +67,6 @@ const PostItem = (
     //   </button>
     // </div>
 
-  //   <div className="post-item">
-  //     <div className="movie-info">
-  //       <img
-  //         className="movie-photo"
-  //         src={tempMovie.photo}
-  //         alt={`${tempMovie.title} Movie Poster`}
-  //       />
-  //       <div className="movie-title">{tempMovie.title}</div>
-  //     </div>
-  //   <div className="post-header">
-  //     <img
-  //       className="user-avatar"
-  //       src={tempUser.avatar}
-  //       alt={`${tempUser.name}'s Avatar`}
-  //     />
-  //     <div className="post-details">
-  //       <div className="post-title">{post.title}</div>
-  //       <div className="post-subtitle">
-  //         {tempUser.name} - {post.createdAt}
-  //       </div>
-  //     </div>
-  //   </div>
-  //   <div className="post-content">{post.content}</div>
   //   <button
   //     className="delete-button"
   //     onClick={() => deletepostHandler(post.id)}
@@ -99,22 +79,22 @@ const PostItem = (
   <div className="movie-info">
     <img
       className="movie-photo"
-      src={tempMovie.photo}
-      alt={`${tempMovie.title} Movie Poster`}
+      src={post.moviePoster}
+      alt={`${post.movieTitle} Movie Poster`}
     />
-    <div className="movie-title">{tempMovie.title}</div>
+    <div className="home-movie-title">{post.movieTitle}</div>
   </div>
   <div className="post-content-container">
     <div className="post-header">
       <img
         className="user-avatar"
         src={tempUser.avatar}
-        alt={`${tempUser.name}'s Avatar`}
+        alt={`${post.username}'s Avatar`}
       />
       <div className="post-details">
         <div className="post-title">{post.title}</div>
         <div className="post-subtitle">
-          {tempUser.name} - {post.createdAt}
+          {post.username} - {formattedTime}
         </div>
       </div>
     </div>

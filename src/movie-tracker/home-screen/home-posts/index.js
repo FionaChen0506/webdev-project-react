@@ -3,7 +3,8 @@ import PostStats from "./post-stats";
 import React, {useEffect} from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-import {findpostsThunk} from "../../services/posts-thunks";
+
+import {findPostsThunk} from "../../services/posts-thunks";
 import "./style.css";
 
 const HomePosts = () => {
@@ -11,7 +12,7 @@ const HomePosts = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     //console.log('Dispatching findpostsThunk...');
-    dispatch(findpostsThunk())
+    dispatch(findPostsThunk())
   }, [])
 
     return(
@@ -27,6 +28,7 @@ const HomePosts = () => {
           <div>
             <PostItem post={post} />
             <PostStats post={post} />
+            {/* <PostMovie post={post} /> */}
           </div>
         </li>
       ))}

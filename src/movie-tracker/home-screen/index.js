@@ -1,6 +1,7 @@
 import React from "react";
 import HomePosts from "./home-posts";
 import "./styles.css"
+import { Link } from "react-router-dom";
 
 
 const HomeScreen = () => {
@@ -12,9 +13,24 @@ const HomeScreen = () => {
         <div className="position-relative ml-0">
         <h5 className="position-relative  text-primary">Discover, Discuss, and Dive into the World of Movies.</h5>
         
+            {/* Buttons to navigate to other routes */}
+            <div className="button-container">
+            <Link to="/reviewer/search">
+              <button className="btn btn-primary">Search Movies</button>
+            </Link>
+            <Link to="/reviewer/login">
+              <button className="btn btn-primary">Login</button>
+            </Link>
+            <Link to="/reviewer/register">
+              <button className="btn btn-primary">Register</button>
+            </Link>
+          </div>
+
+
         <div className="home-posts-container">
           <HomePosts />
         </div>
+
         </div>
      </div>
 

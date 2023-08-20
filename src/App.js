@@ -23,6 +23,7 @@ function App() {
         <div className="container">
           <Routes>
             <Route path="/"         element={<Navigate to={"/reviewer/home"}/>}/>
+            <Route path="/reviewer" element={<Navigate to={"/reviewer/home"}/>}/>
             <Route path="/reviewer/*" element={<MovieReviewer/>}/>
 
           </Routes>

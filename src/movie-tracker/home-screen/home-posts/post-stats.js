@@ -3,7 +3,7 @@ import { FaRegComment, FaHeart} from 'react-icons/fa';
 import { useDispatch } from "react-redux";
 import { AiOutlineRetweet, AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { FiShare, FiThumbsDown } from "react-icons/fi";
-import { updatepostThunk } from "../../services/posts-thunks";
+import { updatePostThunk } from "../../services/posts-thunks";
 import {PiThumbsDownDuotone, PiThumbsDownFill} from "react-icons/pi"
 
 
@@ -15,7 +15,7 @@ const PostStats = ({ post}) => {
           liked : true,
           likes : post.likes + 1,
       };
-      dispatch(updatepostThunk(updatedpost))
+      dispatch(updatePostThunk(updatedpost))
   }
   const handleDislikeToggle = () => {
     const updatedpost = {
@@ -23,7 +23,7 @@ const PostStats = ({ post}) => {
         disliked : true,
         dislikes : post.dislikes + 1,
     };
-    dispatch(updatepostThunk(updatedpost))
+    dispatch(updatePostThunk(updatedpost))
 }
 
   return (
@@ -49,7 +49,7 @@ const PostStats = ({ post}) => {
                 {/* <FaHeart
                   className="text-danger ms-3"
                   onClick={() =>
-                    dispatch(updatepostThunk({ ...post, likes: post.likes + 1 }))
+                    dispatch(updatePostThunk({ ...post, likes: post.likes + 1 }))
                   }
                 />  */}
                 <span className="ms-1">{post.likes}</span>
@@ -64,7 +64,7 @@ const PostStats = ({ post}) => {
       <div className="col-2" onClick={handleDislikeToggle}>
         {/* <FiThumbsDown className="ms-3"
             onClick={() =>
-              dispatch(updatepostThunk({ ...post, dislikes: post.dislikes + 1 }))
+              dispatch(updatePostThunk({ ...post, dislikes: post.dislikes + 1 }))
             }
         />  */}
 
