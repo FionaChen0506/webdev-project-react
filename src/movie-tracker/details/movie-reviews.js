@@ -2,7 +2,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import React, {useEffect} from "react";
 import { findPostsThunk } from "../services/posts-thunks";
-import './details.css'
+import './details.css';
 
 const MovieReviews = ({ imdbid }) => {
 

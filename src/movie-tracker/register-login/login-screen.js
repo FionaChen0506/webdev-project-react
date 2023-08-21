@@ -16,7 +16,7 @@ const handleLogin = async () => {
     if (action.error) {
       alert("The username or the password is not right, please try again.");
     } else {
-      navigate("/home");
+      navigate("/reviewer/home");
     }
 
   } catch (e) {

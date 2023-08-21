@@ -23,7 +23,7 @@ function RegisterScreen() {
       }
       
       setError(null); // Clear any previous error
-        const user = await dispatch(registrationThunk({ username, password, firstName, lastName, }));
+        const user = await dispatch(registrationThunk({ username, password, firstName, lastName, email }));
         if (user.error) {
             alert("The username is used. Please enter a new one.")
         } else {

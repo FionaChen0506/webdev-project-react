@@ -24,6 +24,9 @@ const HomeScreen = () => {
             <Link to="/reviewer/register">
               <button className="btn btn-primary">Register</button>
             </Link>
+            <Link to="/reviewer/profile">
+              <button className="btn btn-primary">Profile</button>
+            </Link>
           </div>
 
 
