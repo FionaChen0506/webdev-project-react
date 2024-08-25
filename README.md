@@ -1,7 +1,7 @@
 # React App of Movie Reviewer Website
 A functional, user-friendly platform for film enthusiasts to engage in film critique and analysis. 
 
-This is the front-end of the website, the backend using Node.js and MongoDB can be found at: https://github.com/yunke-l/movie-reviewer-web-node-server   
+This is the front-end of the website, the backend using Node.js and MongoDB can be found at: [here](https://github.com/FionaChen0506/webdev-project-node-server)   
   
 Runs the node server first, you can open [http://localhost:4000/api/users](http://localhost:4000/api/users) to view the users' data, or go to [http://localhost:4000/api/posts](http://localhost:4000/api/posts) to view the posts' data. 
 
