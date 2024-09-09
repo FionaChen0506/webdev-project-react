@@ -28,23 +28,6 @@ function ShowMoviesRelated(props) {
     
   
     return (      
-    //     <div>
-    //     {directorInfo ? (
-    //       <div>
-    //         <h2>Known For:</h2>
-    //         <ul>
-    //           {directorInfo.known_for.map(movie => (
-    //             <li key={movie.id}>
-    //               <h3>{movie.title}</h3>
-    //               <img src={`https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`} alt={movie.title} />
-    //             </li>
-    //           ))}
-    //         </ul>
-    //       </div>
-    //     ) : (
-    //       <h1>Loading...</h1>
-    //     )}
-    //   </div>
     <div className="show-movies-related-container mb-4">
       {directorInfo ? (
           <div>

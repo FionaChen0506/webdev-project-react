@@ -8,6 +8,7 @@ const authSlice = createSlice({
  extraReducers: {
    [loginThunk.fulfilled]: (state, { payload }) => {
      state.currentUser = payload;
+     console.log('log instate.currentUse Data:', state.currentUser); 
    },
 
    [logoutThunk.fulfilled]: (state) => {
@@ -28,7 +29,8 @@ const authSlice = createSlice({
 
   [updateUserThunk.fulfilled]: (state, { payload }) => {
     console.log('Updated User Data:', payload); 
-    state.currentUser = payload;
+    state.currentUser.user = payload;
+    console.log('state.currentUse.user.user Data:', state.currentUser.user.user); //relog in and can see updated data
   },
 
   [registrationThunk.fulfilled]: (state, { payload }) => {
